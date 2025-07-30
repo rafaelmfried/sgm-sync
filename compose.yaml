@@ -1,0 +1,16 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - sgm_network
+volumes:
+  mongo_data:
+    driver: local
+networks:
+  sgm_network:
+    driver: bridge
